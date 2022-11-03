@@ -1,18 +1,28 @@
-import React from "react";
+import { useState } from "react";
+import PokemonData from "../components/PokemonData";
 import Search from "../components/Search";
 import { fetchPokemon } from "../services/getPokemon";
 
-function Home() {
+export default function Home() {
+  const [pokemon, setPokemon] = useState();
+  const [loading, setLoading] = useState(false);
   const getPokemon = async (query) => {
+    setLoading(true);
     const response = await fetchPokemon(query);
-    const data = await response.json();
-    console.log(data);
+    const results = await response.json();
+    setPokemon(results);
+    console.log(results);
+    setLoading(false);
   };
   return (
     <div>
       <Search getPokemon={getPokemon} />
+      {!loading && pokemon ? (
+        <PokemonData
+          name={pokemon.name}
+          sprite={pokemon.sprites.other.dream_world.front_default}
+        />
+      ) : null}
     </div>
   );
 }
-
-export default Home;

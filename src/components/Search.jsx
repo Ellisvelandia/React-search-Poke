@@ -9,10 +9,9 @@ export default function Search(props) {
   }
 
   return (
-    <div className="flex flex-col justify-center items-center h-screen">
-      <h1>{search}</h1>
+    <div className="flex flex-col justify-center items-center" >
       <form
-        className="flex items-center w-3/6"
+        className="flex items-center w-full"
         onClick={(e) => e.preventDefault()}
         onChange={handleSubmit}
       >
