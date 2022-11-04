@@ -10,6 +10,7 @@ export default function Search(props) {
 
   return (
     <div className="flex flex-col justify-center items-center mt-5" >
+      <img src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png" alt="logo" />
       <form
         className="flex items-center w-full"
         onClick={(e) => e.preventDefault()}
