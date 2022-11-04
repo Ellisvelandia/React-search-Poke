@@ -21,6 +21,9 @@ export default function Home() {
         <PokemonData
           name={pokemon.name}
           sprite={pokemon.sprites.other.dream_world.front_default}
+          abilities={pokemon.abilities}
+          stats={pokemon.stats}
+          types={pokemon.types}
         />
       ) : null}
     </div>
